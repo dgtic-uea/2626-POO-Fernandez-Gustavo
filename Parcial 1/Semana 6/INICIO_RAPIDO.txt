@@ -1,0 +1,250 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                            ║
+║                         🏪 SISTEMA DE RESTAURANTE - INICIO RÁPIDO 🏪                      ║
+║                                                                                            ║
+║                            Demostración Interactiva de POO                                ║
+║                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 1️⃣  EJECUTA EL PROGRAMA
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+En tu terminal, escribe:
+
+    $ cd "Parcial 1/Semana 6/restaurante_app"
+    $ python3 main.py
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 2️⃣  VERÁs ESTO (APROXIMADAMENTE):
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+╔══════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                          ║
+║                  🏪 SISTEMA DE RESTAURANTE - DEMONSTRACIÓN DIDÁCTICA DE POO             ║
+║                    Herencia | Encapsulación | Polimorfismo | Modularidad               ║
+║                                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════════════════════╝
+
+⏸️  Presiona Enter para continuar...
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 3️⃣  QUÉ SUCEDE DESPUÉS (4 PARTES DIDÁCTICAS):
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+┌─ PARTE 1️⃣  HERENCIA (aprenderás cómo funciona la reutilización de código)
+│
+│  ✅ Explicación de qué es herencia
+│  ✅ Diagrama visual de jerarquía
+│  ✅ Creación de objeto Platillo
+│  ✅ Análisis de cada atributo (¿heredado o propio?)
+│  ✅ Verificación con isinstance()
+│  
+│  ⏸️  Pausa para reflexión
+│
+├─ PARTE 2️⃣  ENCAPSULACIÓN (aprenderás cómo se protegen los datos)
+│
+│  ✅ Explicación de qué es encapsulación
+│  ✅ Demostración: Lectura de precio (✅ permitido)
+│  ✅ Demostración: Acceso directo (❌ bloqueado)
+│  ✅ Demostración: Cambio válido (✅ aceptado)
+│  ✅ Demostración: Cambio inválido (❌ rechazado)
+│  ✅ Conclusión sobre validación
+│  
+│  ⏸️  Pausa para reflexión
+│
+├─ PARTE 3️⃣  POLIMORFISMO (aprenderás cómo objetos responden diferente)
+│
+│  ✅ Explicación de qué es polimorfismo
+│  ✅ Creación de múltiples objetos (Platillo y Bebida)
+│  ✅ Almacenamiento en lista
+│  ✅ Iteración: Cada objeto muestra su PROPIA versión
+│    - Objeto 1: 🍽️  PLATILLO | ... formato platillo
+│    - Objeto 2: 🍽️  PLATILLO | ... formato platillo
+│    - Objeto 3: 🥤 BEBIDA | ... formato bebida
+│    - Objeto 4: 🥤 BEBIDA | ... formato bebida
+│  ✅ Conclusión: Mismo método, diferentes resultados
+│  
+│  ⏸️  Pausa para reflexión
+│
+└─ PARTE 4️⃣  SISTEMA COMPLETO (integración de todos los conceptos)
+   
+   ✅ Creación del restaurante
+   ✅ Agregación de 6 productos
+   ✅ Menú completo (polimorfismo en acción)
+   ✅ Estadísticas
+   ✅ Resumen final
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 4️⃣  CÓMO NAVEGAR POR EL PROGRAMA:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+Cada vez que veas:
+
+    ⏸️  Presiona Enter para continuar...
+
+Simplemente presiona la tecla ENTER en tu teclado ↩️
+
+El programa avanzará a la siguiente sección.
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 5️⃣  QUÉ BUSCAR - INDICADORES VISUALES:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+🔍 HERENCIA - Identifica estas palabras y símbolos:
+
+   ✓ HEREDADO     → significa que el atributo viene de la clase padre
+   ✓ PROPIO       → significa que es único de esta clase
+   ✓ ↑ ▲          → flecha indicando herencia en diagramas
+   ✓ super()      → método para llamar al constructor padre
+
+   Ejemplo que verás:
+   ┌─ Atributo: nombre = 'Lomo a la Pimienta'
+   │  └─ Origen: HEREDADO de Producto ✓
+
+
+🔐 ENCAPSULACIÓN - Busca estos indicadores:
+
+   ✓ PRIVADO      → atributo protegido (comienza con __)
+   ✓ PROTEGIDO    → no se puede acceder directamente
+   ✓ ✅            → validación exitosa
+   ✓ ❌            → validación fallida
+
+   Ejemplo que verás:
+   >>> platillo_1.precio
+   ❌ Error: 'Platillo' object has no attribute 'precio'
+   ✅ Correcto: El atributo está PROTEGIDO
+
+
+🔄 POLIMORFISMO - Observa estos cambios:
+
+   ✓ 🍽️  (tenedor)   → indica que es un Platillo
+   ✓ 🥤 (vaso)      → indica que es una Bebida
+   ✓ MISMO MÉTODO   → mostrar_informacion()
+   ✓ DIFERENTE SALIDA → cada tipo muestra información diferente
+
+   Ejemplo que verás:
+   🍽️  PLATILLO | Principal: Lomo a la Pimienta | Precio: $55.99 | Calorías: 650 cal
+   🥤 BEBIDA | Jugo: Jugo de Naranja Natural | Precio: $4.50 | Volumen: 350 ml
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 6️⃣  TEMPO ESTIMADO:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+Parte 1️⃣  Herencia          → 3-5 minutos de lectura
+Pausa                       → 1 minuto (presionas Enter)
+Parte 2️⃣  Encapsulación     → 5-7 minutos de lectura  
+Pausa                       → 1 minuto (presionas Enter)
+Parte 3️⃣  Polimorfismo      → 5-7 minutos de lectura
+Pausa                       → 1 minuto (presionas Enter)
+Parte 4️⃣  Sistema Completo  → 3-4 minutos de lectura
+Resumen                     → 2 minutos
+
+TOTAL: 20-30 minutos para una experiencia completa
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 7️⃣  DESPUÉS DE EJECUTAR - PRÓXIMOS PASOS:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+Después de terminar el programa interactivo:
+
+1. Lee el archivo README.md
+   $ cat README.md
+
+2. Estudia el código fuente
+   $ cat modelos/producto.py
+   $ cat modelos/platillo.py
+   $ cat modelos/bebida.py
+   $ cat servicios/restaurante.py
+
+3. Modifica y experimenta
+   - Cambia valores en main.py
+   - Crea nuevas clases
+   - Agrega más productos
+   - Corre el programa de nuevo
+
+4. Lee la guía didáctica
+   $ cat GUIA_EJECUCION_DIDACTICA.md
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 8️⃣  ESTRUCTURA DE ARCHIVOS:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+restaurante_app/
+├── main.py                    👈 Ejecuta esto (python3 main.py)
+├── README.md                  📖 Documentación
+├── modelos/
+│   ├── __init__.py
+│   ├── producto.py            Clase PADRE con encapsulación
+│   ├── platillo.py            Clase HIJA (herencia)
+│   └── bebida.py              Clase HIJA (herencia)
+└── servicios/
+    ├── __init__.py
+    └── restaurante.py         Demostración de polimorfismo
+
+Fuera de restaurante_app/:
+├── GUIA_EJECUCION_DIDACTICA.md        Guía completa
+├── RESUMEN_MEJORAS_DIDACTICAS.md      Explicación de mejoras
+└── RESUMEN_IMPLEMENTACION.md          Verificación de requisitos
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 9️⃣  CONSEJOS PARA APRENDER EFECTIVAMENTE:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+✅ LEE LENTAMENTE
+   No corras. Toma tiempo para entender cada sección.
+
+✅ OBSERVA LOS DIAGRAMAS
+   Los diagramas ASCII te muestran visualmente las relaciones.
+
+✅ IDENTIFICA LOS CONCEPTOS
+   Busca las palabras clave: HEREDADO, PRIVADO, POLIMORFISMO.
+
+✅ REFLEXIONA EN LAS PAUSAS
+   Cuando llegues a "Presiona Enter", tómate un momento.
+
+✅ TOMA NOTAS
+   Escribe lo que observas y lo que aprendes.
+
+✅ EXPERIMENTA DESPUÉS
+   Modifica el código y ve qué sucede.
+
+✅ ESTUDIA EL CÓDIGO FUENTE
+   Lee los archivos .py para entender la implementación.
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+ 🔟 COMENZAR AHORA:
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+Abre tu terminal y ejecuta:
+
+    $ cd "Parcial 1/Semana 6/restaurante_app"
+    $ python3 main.py
+
+¡Presiona Enter en las pausas y aprende POO de forma interactiva!
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+🎓 OBJETIVO FINAL:
+
+Después de ejecutar este programa, TÚ ENTENDERÁS:
+
+  ✅ Qué es HERENCIA y por qué evita duplicación
+  ✅ Qué es ENCAPSULACIÓN y cómo protege datos
+  ✅ Qué es POLIMORFISMO y cómo da flexibilidad
+  ✅ Por qué estos principios hacen el código mejor
+
+¡Que disfrutes aprendiendo Programación Orientada a Objetos! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════════════════════

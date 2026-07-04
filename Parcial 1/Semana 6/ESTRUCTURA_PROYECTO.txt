@@ -1,0 +1,105 @@
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                    SISTEMA DE RESTAURANTE - ESTRUCTURA DEL PROYECTO                   ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+
+📁 DIRECTORIO RAÍZ: Parcial 1/Semana 6/
+
+restaurante_app/
+├── 📄 README.md                          [Documentación completa del proyecto]
+├── 📄 main.py                           [Punto de entrada del programa]
+│
+├── 📁 modelos/                          [Paquete de clases del dominio]
+│   ├── 📄 __init__.py                   [Inicializador del paquete]
+│   ├── 📄 producto.py                   [Clase padre Producto]
+│   ├── 📄 platillo.py                   [Clase hija Platillo]
+│   └── 📄 bebida.py                     [Clase hija Bebida]
+│
+└── 📁 servicios/                        [Paquete de servicios]
+    ├── 📄 __init__.py                   [Inicializador del paquete]
+    └── 📄 restaurante.py                [Clase Restaurante (servicio)]
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                            CARACTERÍSTICAS IMPLEMENTADAS                              ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+
+✅ HERENCIA
+   └─ Producto (Clase Padre)
+      ├─ Platillo (atributos: calorias, tipo_platillo)
+      └─ Bebida (atributos: volumen_ml, tipo_bebida)
+   └─ Uso de super() para reutilizar constructor de clase padre
+
+✅ ENCAPSULACIÓN
+   └─ Atributo __precio (privado) en clase Producto
+   └─ Métodos de acceso: obtener_precio()
+   └─ Métodos de modificación: cambiar_precio() con validación
+   └─ Validación: precio > 0 (no negativo ni cero)
+
+✅ POLIMORFISMO
+   └─ Método mostrar_informacion() sobrescrito en:
+      ├─ Platillo (muestra: tipo, nombre, precio, calorías, estado)
+      └─ Bebida (muestra: tipo, nombre, precio, volumen, estado)
+   └─ Demostración en Restaurante.listar_productos()
+
+✅ MODULARIDAD
+   └─ Paquete modelos/ con clases de dominio
+   └─ Paquete servicios/ con clases de negocio
+   └─ Importaciones explícitas en __init__.py
+
+✅ DOCUMENTACIÓN
+   └─ Docstrings en todas las clases y métodos
+   └─ Comentarios explicativos en main.py
+   └─ README.md con guía completa de uso
+
+✅ CONVENCIONES
+   └─ Nombres descriptivos en Python (snake_case, PascalCase)
+   └─ Anotaciones de tipo en parámetros y retorno
+   └─ Seguimiento de PEP 8
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                              CÓMO EJECUTAR EL PROGRAMA                                ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+
+Desde la terminal, navega a la carpeta del proyecto:
+
+    cd Parcial\ 1/Semana\ 6/restaurante_app/
+
+Ejecuta el programa:
+
+    python3 main.py
+
+El programa demostrará:
+  • Creación de objetos Platillo y Bebida
+  • Agregación de productos al restaurante
+  • Listado de menú (demuestra polimorfismo)
+  • Encapsulación de precios con validación
+  • Cambio de disponibilidad
+  • Estadísticas del restaurante
+  • Verificación de relaciones de herencia
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║                        REQUISITOS MÍNIMOS COMPLETADOS ✓                              ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
+
+✓ Proyecto en Python con estructura modular
+✓ Clase padre Producto implementada
+✓ Clases hijas Platillo y Bebida implementadas
+✓ Herencia entre Producto, Platillo y Bebida
+✓ Constructor __init__() en clases principales
+✓ super() en clases hijas
+✓ Encapsulación en atributo __precio
+✓ Métodos obtener_precio() y cambiar_precio()
+✓ Validación de precio > 0
+✓ Sobrescritura de mostrar_informacion()
+✓ Polimorfismo demostrado
+✓ Clase Restaurante para administrar productos
+✓ 2+ objetos Platillo y 2+ objetos Bebida
+✓ Productos agregados a lista de Restaurante
+✓ Información mostrada en consola
+✓ Nombres descriptivos y convenciones Python
+✓ Comentarios breves en código principal
+✓ README.md con guía completa
+
+═══════════════════════════════════════════════════════════════════════════════════════════
