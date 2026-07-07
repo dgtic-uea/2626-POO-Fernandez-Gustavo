@@ -1,0 +1,393 @@
+# 📦 ÁRBOL DE ARCHIVOS COMPLETO - Semana 7
+
+## Estructura Visual del Proyecto
+
+```
+2626-POO-Fernandez-Gustavo/
+└── Parcial 1/
+    └── Semana 7/
+        └── restaurante_app/
+            │
+            ├── 📁 modelos/                    ← Carpeta de clases de datos
+            │   ├── __init__.py               ← Exporta Producto y Cliente
+            │   ├── producto.py               ← Clase Producto (constructor + @property/@setter)
+            │   └── cliente.py                ← Clase Cliente (@dataclass)
+            │
+            ├── 📁 servicios/                 ← Carpeta de lógica de negocio
+            │   ├── __init__.py               ← Exporta Restaurante
+            │   └── restaurante.py            ← Clase Restaurante (servicio principal)
+            │
+            ├── 📄 main.py                    ← Punto de entrada (menú interactivo)
+            │
+            ├── 📖 README.md                  ← Documentación general
+            ├── 📚 GUIA_DIDACTICA.md          ← Guía educativa paso a paso
+            ├── 💡 EJEMPLO_INTERACTIVO.md     ← Sesión completa de uso
+            ├── 🏗️ ESTRUCTURA_FINAL.md        ← Detalles técnicos
+            ├── ⚡ INICIO_RAPIDO.txt          ← Guía rápida (3 pasos)
+            ├── 📋 RESUMEN_EJECUTIVO.md       ← Este resumen
+            └── 📊 ARCHIVOS_CREADOS.txt       ← Este archivo
+```
+
+---
+
+## 📄 Detalle de Cada Archivo
+
+### 🗂️ CARPETA: modelos/
+
+#### `modelos/__init__.py`
+```python
+"""Módulo modelos: contiene clases de datos principales."""
+from .producto import Producto
+from .cliente import Cliente
+__all__ = ['Producto', 'Cliente']
+```
+- **Propósito**: Exportar las clases modelo para fácil importación
+- **Líneas**: ~5
+- **Conceptos**: Módulo, importación, __all__
+
+#### `modelos/producto.py`
+```python
+class Producto:
+    def __init__(self, nombre, categoria, precio, disponible=True):
+        self.nombre = nombre
+        # ...
+
+    @property
+    def nombre(self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre(self, valor):
+        if not valor or not valor.strip():
+            raise ValueError("...")
+        self._nombre = valor.strip()
+
+    # ... más propiedades y setters
+
+    def mostrar_informacion(self):
+        return f"Producto: {self.nombre}..."
+```
+- **Propósito**: Define la clase Producto con validaciones
+- **Líneas**: ~160
+- **Conceptos**: Constructor tradicional, @property, @setter, validación
+- **Atributos**: nombre, categoría, precio, disponible
+
+#### `modelos/cliente.py`
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Cliente:
+    id_cliente: str
+    nombre: str
+    correo: str
+
+    def mostrar_informacion(self):
+        return f"Cliente ID: {self.id_cliente}..."
+```
+- **Propósito**: Define la clase Cliente usando @dataclass
+- **Líneas**: ~30
+- **Conceptos**: @dataclass, simplificación de código
+- **Atributos**: id_cliente, nombre, correo
+
+---
+
+### 🗂️ CARPETA: servicios/
+
+#### `servicios/__init__.py`
+```python
+"""Módulo servicios: contiene clases de servicio."""
+from .restaurante import Restaurante
+__all__ = ['Restaurante']
+```
+- **Propósito**: Exportar la clase de servicio
+- **Líneas**: ~5
+- **Conceptos**: Módulo, importación
+
+#### `servicios/restaurante.py`
+```python
+class Restaurante:
+    def __init__(self, nombre="Mi Restaurante"):
+        self._productos = []
+        self._clientes = []
+
+    def registrar_producto(self, producto):
+        # Valida y registra
+
+    def listar_productos(self):
+        # Retorna copia
+
+    def buscar_producto(self, criterio, tipo_busqueda="nombre"):
+        # Busca y filtra
+
+    # ... métodos para clientes ...
+
+    def obtener_estadisticas(self):
+        # Retorna información agregada
+```
+- **Propósito**: Clase de servicio que administra productos y clientes
+- **Líneas**: ~180
+- **Conceptos**: Encapsulación, listas privadas, búsquedas, validación
+- **Métodos principales**: 9 métodos públicos + 2 privados
+
+---
+
+### 📄 ARCHIVO: main.py
+```python
+"""Punto de entrada del sistema."""
+from servicios import Restaurante
+from modelos import Producto, Cliente
+
+def mostrar_menu_principal():
+    # Muestra menú
+
+def registrar_producto(restaurante):
+    # Captura datos y registra
+
+def listar_productos(restaurante):
+    # Lista productos
+
+# ... más funciones ...
+
+def cargar_datos_ejemplo(restaurante):
+    # Precarga 8 productos y 5 clientes
+
+def main():
+    restaurante = Restaurante()
+    cargar_datos_ejemplo(restaurante)
+
+    while True:
+        # Menú interactivo
+```
+- **Propósito**: Punto de entrada del programa
+- **Líneas**: ~340
+- **Conceptos**: Menú interactivo, validación, entrada/salida
+- **Funciones**: 9 funciones + main()
+
+---
+
+### 📖 DOCUMENTACIÓN
+
+#### `README.md`
+- Descripción general del proyecto
+- Características principales
+- Cómo ejecutar
+- Validaciones implementadas
+- Requisitos de Python
+- **Líneas**: ~200
+
+#### `GUIA_DIDACTICA.md`
+- Explicación del flujo interactivo
+- Paso a paso de cada funcionalidad
+- Comparación de @dataclass vs constructor
+- Validaciones demostrables
+- Flujo general del programa
+- Requisitos cumplidos
+- **Líneas**: ~300
+
+#### `EJEMPLO_INTERACTIVO.md`
+- Sesión completa de 12 pasos
+- Ejemplos exactos de entrada/salida
+- Explicación de qué sucede internamente
+- Pruebas sugeridas
+- **Líneas**: ~400
+
+#### `ESTRUCTURA_FINAL.md`
+- Resumen ejecutivo
+- Estructura de carpetas
+- Descripción detallada de cada archivo
+- Flujo interactivo completo
+- Requisitos cumplidos
+- Conceptos demostrados
+- **Líneas**: ~450
+
+#### `INICIO_RAPIDO.txt`
+- Guía de 3 pasos para ejecutar
+- Menú principal
+- Ejemplos rápidos
+- Validaciones
+- **Líneas**: ~80
+
+#### `RESUMEN_EJECUTIVO.md`
+- ¿Qué se logró?
+- Cómo usar
+- Documentación incluida
+- Conceptos demostrados
+- Características didácticas
+- Próximos pasos
+- **Líneas**: ~250
+
+---
+
+## 📊 Estadísticas del Proyecto
+
+### Código Principal
+| Archivo | Líneas | Propósito |
+|---------|--------|----------|
+| main.py | ~340 | Menú interactivo |
+| servicios/restaurante.py | ~180 | Lógica de negocio |
+| modelos/producto.py | ~160 | Clase Producto |
+| modelos/cliente.py | ~30 | Clase Cliente |
+| modelos/__init__.py | ~5 | Exportaciones |
+| servicios/__init__.py | ~5 | Exportaciones |
+| **TOTAL CÓDIGO** | **~720** | |
+
+### Documentación
+| Archivo | Líneas | Propósito |
+|---------|--------|----------|
+| README.md | ~200 | Descripción general |
+| GUIA_DIDACTICA.md | ~300 | Conceptos educativos |
+| EJEMPLO_INTERACTIVO.md | ~400 | Ejemplos prácticos |
+| ESTRUCTURA_FINAL.md | ~450 | Detalles técnicos |
+| INICIO_RAPIDO.txt | ~80 | Quick start |
+| RESUMEN_EJECUTIVO.md | ~250 | Resumen |
+| **TOTAL DOCUMENTACIÓN** | **~1,680** | |
+
+### Total General
+- **Líneas de código**: ~720
+- **Líneas de documentación**: ~1,680
+- **Total**: ~2,400
+
+---
+
+## 🎯 Conceptos Implementados por Archivo
+
+### main.py
+✓ Input/output en consola
+✓ Menú interactivo
+✓ Validación básica
+✓ Llamadas a métodos de servicio
+✓ Manejo de excepciones
+✓ Funciones modulares
+✓ Datos de ejemplo
+
+### modelos/producto.py
+✓ Constructor tradicional __init__()
+✓ Decorador @property
+✓ Decorador @setter
+✓ Validación en setters
+✓ Atributos privados
+✓ Método de información
+✓ Métodos especiales __str__ y __repr__
+
+### modelos/cliente.py
+✓ Decorador @dataclass
+✓ Generación automática de métodos
+✓ Tipos de datos explícitos
+✓ Método de información
+
+### servicios/restaurante.py
+✓ Encapsulación (listas privadas)
+✓ Métodos públicos y privados
+✓ Validación de duplicados
+✓ Búsquedas con filtros
+✓ Retorno de copias (seguridad)
+✓ Cálculo de estadísticas
+✓ Excepciones personalizadas
+
+---
+
+## 🚀 Cómo Navegar el Proyecto
+
+### Para Ejecutar:
+1. Terminal: `cd restaurante_app && python3 main.py`
+2. PyCharm: Click derecho en main.py → Run
+
+### Para Entender Conceptos:
+1. Lee: `GUIA_DIDACTICA.md`
+2. Ejecuta: `python3 main.py`
+3. Lee: `EJEMPLO_INTERACTIVO.md`
+
+### Para Detalles Técnicos:
+1. Lee: `ESTRUCTURA_FINAL.md`
+2. Abre: Archivos de código
+3. Lee comentarios en código
+
+### Para Referencia Rápida:
+1. Lee: `INICIO_RAPIDO.txt`
+2. Lee: `RESUMEN_EJECUTIVO.md`
+
+---
+
+## ✅ Checklist de Completitud
+
+### Estructura ✓
+- [x] Carpeta modelos/ con __init__.py
+- [x] Carpeta servicios/ con __init__.py
+- [x] Archivo main.py
+- [x] Importaciones correctas
+
+### Clases ✓
+- [x] Producto con constructor tradicional
+- [x] Producto con @property y @setter
+- [x] Cliente con @dataclass
+- [x] Restaurante con métodos de servicio
+
+### Funcionalidades ✓
+- [x] Menú interactivo (8 opciones)
+- [x] Registro de productos
+- [x] Listado de productos
+- [x] Búsqueda de productos
+- [x] Registro de clientes
+- [x] Listado de clientes
+- [x] Búsqueda de clientes
+- [x] Estadísticas
+- [x] Datos de ejemplo precargados
+
+### Validaciones ✓
+- [x] Nombre producto no vacío
+- [x] Categoría no vacía
+- [x] Precio > 0
+- [x] Sin productos duplicados
+- [x] Sin clientes con ID duplicado
+
+### Documentación ✓
+- [x] README.md
+- [x] GUIA_DIDACTICA.md
+- [x] EJEMPLO_INTERACTIVO.md
+- [x] ESTRUCTURA_FINAL.md
+- [x] INICIO_RAPIDO.txt
+- [x] RESUMEN_EJECUTIVO.md
+- [x] Comentarios en código
+
+---
+
+## 📍 Rutas Importantes
+
+```bash
+# Ruta del proyecto
+/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app/
+
+# Para ejecutar
+cd "/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app"
+python3 main.py
+
+# Archivo principal
+/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app/main.py
+
+# Modelos
+/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app/modelos/
+
+# Servicios
+/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app/servicios/
+```
+
+---
+
+## 🎓 Conclusión
+
+Este proyecto de Semana 7 contiene:
+
+✓ **6 archivos Python** funcionales (720 líneas)
+✓ **7 archivos de documentación** completos (1,680 líneas)
+✓ **8 opciones de menú** totalmente funcionales
+✓ **8 productos** de ejemplo precargados
+✓ **5 clientes** de ejemplo precargados
+✓ **Validaciones** en todos los puntos críticos
+✓ **Estructura modular** bien organizada
+✓ **Documentación educativa** paso a paso
+
+---
+
+**¡Tu proyecto Semana 7 está completo y listo para presentación! 🎉**
+

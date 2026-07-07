@@ -1,0 +1,153 @@
+# ⚡ INICIO RÁPIDO
+
+## Ejecutar el programa en 3 pasos
+
+### Paso 1️⃣: Abrir terminal
+
+```bash
+# macOS/Linux
+cd "/Users/gfernandez/PycharmProjects/2626-POO-Fernandez-Gustavo/Parcial 1/Semana 7/restaurante_app"
+```
+
+### Paso 2️⃣: Ejecutar el programa
+
+```bash
+python3 main.py
+```
+
+### Paso 3️⃣: ¡Disfrutar!
+
+El sistema se cargará con datos de ejemplo. Prueba las opciones del menú.
+
+---
+
+## Menú Principal
+
+```
+1. Registrar producto       ← Ingresa datos y crea objeto
+2. Listar productos         ← Ve todos los productos
+3. Buscar producto          ← Busca por criterio
+4. Registrar cliente        ← Ingresa datos de cliente
+5. Listar clientes          ← Ve todos los clientes
+6. Buscar cliente           ← Busca cliente
+7. Ver estadísticas         ← Ve información agregada
+8. Salir                    ← Termina el programa
+```
+
+---
+
+## Ejemplos Rápidos
+
+### Registrar Producto
+```
+Seleccione: 1
+Nombre: Café Latte
+Categoría: bebida
+Precio: 4.50
+Disponible: s
+```
+
+### Listar Productos
+```
+Seleccione: 2
+→ Ve todos los 8+ productos
+```
+
+### Buscar por Categoría
+```
+Seleccione: 3
+Tipo: 2 (Por categoría)
+Criterio: bebida
+→ Muestra todos los productos tipo bebida
+```
+
+### Registrar Cliente
+```
+Seleccione: 4
+ID: C006
+Nombre: Pedro García
+Correo: pedro@email.com
+```
+
+---
+
+## Datos Precargados
+
+**8 Productos**:
+- Hamburguesa, Pizza, Pasta, Refresco, Jugo, Agua, Tiramisú, Helado
+
+**5 Clientes**:
+- C001 a C005 con datos reales
+
+---
+
+## Validaciones Automáticas
+
+✓ Nombre producto no puede estar vacío
+✓ Categoría no puede estar vacía
+✓ Precio debe ser > 0
+✓ No permite productos duplicados
+✓ No permite clientes con ID duplicado
+
+---
+
+## Documentación Completa
+
+- 📖 **README.md** - Descripción del proyecto
+- 📚 **GUIA_DIDACTICA.md** - Explicación de conceptos
+- 💡 **EJEMPLO_INTERACTIVO.md** - Sesión paso a paso
+- 🏗️ **ESTRUCTURA_FINAL.md** - Detalles técnicos
+- ⚡ **INICIO_RAPIDO.txt** - Este archivo
+
+---
+
+## Estructura de Carpetas
+
+```
+restaurante_app/
+├── modelos/
+│   ├── __init__.py
+│   ├── producto.py      (Clase Producto con @property/@setter)
+│   └── cliente.py       (Clase Cliente con @dataclass)
+├── servicios/
+│   ├── __init__.py
+│   └── restaurante.py   (Clase de servicio)
+└── main.py              (Menú interactivo)
+```
+
+---
+
+## Conceptos Clave Demostrados
+
+| Concepto | Archivo | Ejemplo |
+|----------|---------|---------|
+| Constructor tradicional | producto.py | `def __init__(self, nombre, ...)` |
+| @property | producto.py | `@property def nombre(self)` |
+| @setter | producto.py | `@nombre.setter def nombre(self, valor)` |
+| @dataclass | cliente.py | `@dataclass class Cliente` |
+| Validación | producto.py | `if not valor: raise ValueError` |
+| Encapsulación | restaurante.py | `self._productos = []` |
+| Búsqueda | restaurante.py | `[p for p in self._productos if...]` |
+
+---
+
+## Requisitos
+
+- Python 3.7+
+- Sin librerías externas
+
+---
+
+## ¡Listo!
+
+Tu sistema de restaurante está completamente funcional y didáctico.
+
+**Próximos pasos**:
+1. Ejecuta el programa
+2. Registra nuevos productos
+3. Busca productos
+4. Lee los comentarios en el código
+5. Entiende cómo funciona cada clase
+
+¡Éxito! 🚀
+
